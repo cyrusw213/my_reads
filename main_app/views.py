@@ -26,3 +26,7 @@ class BookCreate(CreateView):
 class BookDelete(DeleteView):
     model = Book
     success_url = '/books/'
+
+class BookUpdate(UpdateView):
+    model = Book
+    fields = ['name', 'genre', 'description', 'author']
