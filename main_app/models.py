@@ -13,3 +13,4 @@ class Book(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse('detail', kwargs={'book_id': self.id})
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
