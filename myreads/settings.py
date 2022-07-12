@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'myreads.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'books',
+        'NAME': 'newbook',
     }
 }
 

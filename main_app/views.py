@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Book
+from django.forms import ModelForm
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -48,7 +49,7 @@ def book_detail(request, book_id):
 
 class BookCreate(LoginRequiredMixin, CreateView):
     model = Book
-    fields = ['name', 'genre', 'description', 'author']
+    fields = ['name', 'genre', 'author', 'read', 'publish_date', 'description']    
     success_url = '/books/'
       # This inherited method is called when a
   # valid cat form is being submitted
@@ -62,6 +63,6 @@ class BookDelete(LoginRequiredMixin, DeleteView):
     model = Book
     success_url = '/books/'
 
-class BookUpdate(LoginRequiredMixin, UpdateView):
+class BookUpdate(LoginRequiredMixin, UpdateView, ModelForm):
     model = Book
-    fields = ['name', 'genre', 'description', 'author']
+    fields = ['name', 'genre', 'author', 'read', 'description']
