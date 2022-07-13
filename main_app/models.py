@@ -19,6 +19,8 @@ class Book(models.Model):
     class Meta:
         ordering = ['name']
 
+    def already_read(self):
+        return self.name.filter(read='Yes')
 
     def __str__(self):
         return self.name

@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 
-
 <a class='dropdown-trigger btn red' href="#" data-target='dropdown1'>Filter</a>
 <ul id='dropdown1' class='dropdown-content'>
-  <li><a href="{% url 'book_read'%}">Already Read</a></li>
-  <li><a href="{% url 'want_to_read'%}">Want to Read</a></li>
+    <li><a href="{% url 'book_read'%}">Already Read</a></li>
+    <li><a href="{% url 'want_to_read'%}">Want to Read</a></li>
 </ul>
-  <h1>My Bookshelf</h1>
+<h1>Books I want to read</h1>
 
 {% for book in books %}
+
 <div class="card">
   <a href="{% url 'detail' book.id %}">
     <div class="card-content">
@@ -18,9 +18,9 @@
   </a>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.dropdown-trigger');
-  M.Dropdown.init(elems);
-});
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.dropdown-trigger');
+      M.Dropdown.init(elems);
+    });
 </script>
 {% endfor %} {% endblock %}

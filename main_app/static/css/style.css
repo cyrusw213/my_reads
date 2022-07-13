@@ -20,7 +20,8 @@ body {
 
 
 
-h1 {
+h1, h5, p {
   background-color: whitesmoke;
-  opacity: 90%
+  opacity: 90%;
+  text-align: center
 }

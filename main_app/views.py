@@ -41,6 +41,15 @@ def book_index(request):
     books = Book.objects.filter(user=request.user)
     return render(request, 'books/index.html', {'books': books})
 
+
+def book_read(request):
+    books = Book.objects.filter(read="Yes")
+    return render(request, 'books/read_index.html', {'books': books})
+
+def want_to_read(request):
+    books = Book.objects.filter(read='Want to read')
+    return render(request, 'books/want_to_read_index.html', {'books': books})
+
 @login_required
 def book_detail(request, book_id):
     book = Book.objects.get(id=book_id)
