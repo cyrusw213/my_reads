@@ -38,3 +38,5 @@ class LastRead(models.Model):
         book = models.ForeignKey(Book, on_delete=models.CASCADE)
         def __str__(self):
             return f"{self.num_stars} on {self.date}"
+        class Meta:
+            ordering = ['-date']

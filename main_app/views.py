@@ -7,7 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from .forms import LastReadForm
 
 # Create your views here.
 
@@ -44,7 +44,22 @@ def book_index(request):
 @login_required
 def book_detail(request, book_id):
     book = Book.objects.get(id=book_id)
-    return render(request, 'books/detail.html', {'book': book})
+    lastread_form = LastReadForm()
+    return render(request, 'books/detail.html', {'book': book, 'lastread_form': lastread_form})
+
+
+
+def add_reading(request, book_id):
+  # create the ModelForm using the data in request.POST
+  form = LastReadForm(request.POST)
+  # validate the form
+  if form.is_valid():
+    # don't save the form to the db until it
+    # has the cat_id assigned
+    new_reading = form.save(commit=False)
+    new_reading.book_id = book_id
+    new_reading.save()
+  return redirect('detail', book_id=book_id)
 
 
 class BookCreate(LoginRequiredMixin, CreateView):
@@ -66,3 +81,4 @@ class BookDelete(LoginRequiredMixin, DeleteView):
 class BookUpdate(LoginRequiredMixin, UpdateView, ModelForm):
     model = Book
     fields = ['name', 'genre', 'author', 'read', 'description']
+
