@@ -2,7 +2,7 @@
 
 My Reads allows users to keep track of books they've read and books they want to read in one app. 
 
-#Wireframe
+# Wireframe
 [click here](https://www.figma.com/file/mMI8vqiPBrGQPcLxu2Q4EY/Untitled)
 
 # Technologies Used
