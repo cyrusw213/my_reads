@@ -2,6 +2,8 @@
 
 My Reads allows users to keep track of books they've read and books they want to read in one app. 
 
+#Wireframe
+[click here](https://www.figma.com/file/mMI8vqiPBrGQPcLxu2Q4EY/Untitled)
 
 # Technologies Used
 Python, django, HTML, CSS, Materialize
