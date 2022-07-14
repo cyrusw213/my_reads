@@ -11,6 +11,6 @@ Python, django, HTML, CSS, Materialize
 # Getting Started
 [Deploy App](https://stark-dawn-97514.herokuapp.com/)
 
-#Future Enhancements
+# Future Enhancements
 * add an API so it's easier to add books
 * search capability
