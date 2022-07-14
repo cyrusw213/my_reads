@@ -6,7 +6,7 @@ My Reads allows users to keep track of books they've read and books they want to
 [click here](https://www.figma.com/file/mMI8vqiPBrGQPcLxu2Q4EY/Untitled)
 
 # Technologies Used
-Python, django, HTML, CSS, Materialize
+Python, django, HTML, CSS, Materialize, SQL, JavaScript, Heroku
 
 # Getting Started
 [Deploy App](https://stark-dawn-97514.herokuapp.com/)
